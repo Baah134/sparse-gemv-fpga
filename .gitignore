@@ -1,11 +1,6 @@
-# Vivado & Vitis HLS Junk Files
+# Vivado Junk
 *.log
 *.jou
-*.str
-*.wdb
-*.bak
-*.summary
-*.rpt
 *.cache/
 *.hw/
 *.ip_user_files/
@@ -13,14 +8,4 @@
 *.sim/
 *.gen/
 .Xil/
-
-# Keep source files
-!*.v
-!*.sv
-!*.vhd
-!*.cpp
-!*.h
-!*.tcl
-!*.md
-!*.py
-!*.txt
+mac_project/
