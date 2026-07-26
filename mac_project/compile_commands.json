@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "C:\\Users\\prince.baah\\Downloads\\fpga_project\\mac_project",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=mac_accumulator",
+      "-c",
+      "C:\\Users\\prince.baah\\Downloads\\fpga_project\\mac_accumulator.cpp"
+    ],
+    "file": "C:\\Users\\prince.baah\\Downloads\\fpga_project\\mac_accumulator.cpp"
+  },
+  {
+    "directory": "C:\\Users\\prince.baah\\Downloads\\fpga_project\\mac_project",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\include",
+      "-c",
+      "C:\\Users\\prince.baah\\Downloads\\fpga_project\\tb_mac.cpp"
+    ],
+    "file": "C:\\Users\\prince.baah\\Downloads\\fpga_project\\tb_mac.cpp"
+  }
+]

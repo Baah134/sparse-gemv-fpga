@@ -1,0 +1,26 @@
+# Vivado & Vitis HLS Junk Files
+*.log
+*.jou
+*.str
+*.wdb
+*.bak
+*.summary
+*.rpt
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+.Xil/
+
+# Keep source files
+!*.v
+!*.sv
+!*.vhd
+!*.cpp
+!*.h
+!*.tcl
+!*.md
+!*.py
+!*.txt

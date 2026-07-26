@@ -1,0 +1,7 @@
+{
+  "workspaceRoot": "C:\\Users\\prince.baah\\Downloads\\fpga_project",
+  "mapping": {
+    "tb_mac.cpp": "mac_project",
+    "mac_accumulator.cpp": "mac_project"
+  }
+}
