@@ -1,0 +1,10 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="../hls/stream_mover.cpp" line="16" pragmaType="pipeline" parentfunction="stream_mover" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../hls/stream_mover.cpp" line="9" pragmaType="interface" parentfunction="stream_mover" mode="axis" port="in_stream" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="../hls/stream_mover.cpp" line="10" pragmaType="interface" parentfunction="stream_mover" mode="axis" port="out_stream" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="../hls/stream_mover.cpp" line="11" pragmaType="interface" parentfunction="stream_mover" mode="s_axilite" port="N" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="../hls/stream_mover.cpp" line="12" pragmaType="interface" parentfunction="stream_mover" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+</pragmas>

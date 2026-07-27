@@ -1,6 +1,0 @@
-mac_accumulator_mac_muladd_8s_8s_32s_32_4_1
-mac_accumulator_control_s_axi
-mac_accumulator_regslice_both
-mac_accumulator_regslice_both
-mac_accumulator_flow_control_loop_delay_pipe
-mac_accumulator

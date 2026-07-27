@@ -1,0 +1,3 @@
+relativeroot=C:/fpga_project/stream_project
+original_argv=-c --mode hls --config C:\fpga_project\stream_project\hls_config.cfg --work_dir stream_project 
+

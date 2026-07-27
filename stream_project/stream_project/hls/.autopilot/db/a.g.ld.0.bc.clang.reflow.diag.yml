@@ -1,0 +1,11 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_stream_mover_ir
+Args:            
+  - Callee:          'stream_mover(hls::stream<ap_int<8>, 0>&, hls::stream<ap_int<8>, 0>&, int)'
+    DebugLoc:        { File: ../hls/stream_mover.cpp, Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_stream_mover_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...

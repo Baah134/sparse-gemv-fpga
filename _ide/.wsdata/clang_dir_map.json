@@ -1,0 +1,7 @@
+{
+  "workspaceRoot": "C:\\fpga_project",
+  "mapping": {
+    "tb\\tb_stream_mover.cpp": "stream_project",
+    "hls\\stream_mover.cpp": "stream_project"
+  }
+}

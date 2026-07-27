@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "C:\\fpga_project\\stream_project",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\common\\technology\\autopilot",
+      "-fhlstoplevel=stream_mover",
+      "-c",
+      "C:\\fpga_project\\hls\\stream_mover.cpp"
+    ],
+    "file": "C:\\fpga_project\\hls\\stream_mover.cpp"
+  },
+  {
+    "directory": "C:\\fpga_project\\stream_project",
+    "arguments": [
+      "C:\\AMDDesignTools\\2025.2\\Vitis\\win64\\tools\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=C:\\AMDDesignTools\\2025.2\\Vitis\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\AMDDesignTools\\2025.2\\Vitis\\include",
+      "-c",
+      "C:\\fpga_project\\tb\\tb_stream_mover.cpp"
+    ],
+    "file": "C:\\fpga_project\\tb\\tb_stream_mover.cpp"
+  }
+]

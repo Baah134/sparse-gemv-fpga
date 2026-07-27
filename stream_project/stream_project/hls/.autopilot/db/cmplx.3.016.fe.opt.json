@@ -1,0 +1,20 @@
+{
+  "0": {
+    "basicblocks": 4,
+    "calls": "",
+    "control_depth": 1,
+    "def_use_depth": 2,
+    "file": "stream_mover.cpp",
+    "fileloc": 4,
+    "instructions": 24,
+    "loads": {
+      "L": 1
+    },
+    "memory_accesses": 4,
+    "name": "stream_mover",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 24
+  }
+}
