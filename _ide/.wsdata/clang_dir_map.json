@@ -1,8 +1,0 @@
-{
-  "workspaceRoot": "C:\\fpga_project",
-  "mapping": {
-    "hls\\dense_gemv.h": "gemv",
-    "tb\\tb_dense_gemv.cpp": "gemv",
-    "hls\\dense_gemv.cpp": "gemv"
-  }
-}
