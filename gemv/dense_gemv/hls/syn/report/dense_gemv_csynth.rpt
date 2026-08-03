@@ -1,0 +1,162 @@
+
+
+================================================================
+== Vitis HLS Report for 'dense_gemv'
+================================================================
+* Date:           Mon Aug  3 20:40:58 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 12 2025)
+* Project:        dense_gemv
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a12t-cpg238-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.207 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------+-------------------------------------+---------+---------+----------+----------+-----+-----+-------------------+
+        |                                                |                                     |  Latency (cycles) |  Latency (absolute) |  Interval |      Pipeline     |
+        |                    Instance                    |                Module               |   min   |   max   |    min   |    max   | min | max |        Type       |
+        +------------------------------------------------+-------------------------------------+---------+---------+----------+----------+-----+-----+-------------------+
+        |grp_dense_gemv_Pipeline_VITIS_LOOP_25_1_fu_314  |dense_gemv_Pipeline_VITIS_LOOP_25_1  |       34|       34|  0.340 us|  0.340 us|    0|    0|  loop pipeline stp|
+        |grp_dense_gemv_Pipeline_VITIS_LOOP_30_2_fu_352  |dense_gemv_Pipeline_VITIS_LOOP_30_2  |        ?|        ?|         ?|         ?|    0|    0|  loop pipeline stp|
+        +------------------------------------------------+-------------------------------------+---------+---------+----------+----------+-----+-----+-------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+-------+------+-----+
+|       Name      | BRAM_18K| DSP |   FF  |  LUT | URAM|
++-----------------+---------+-----+-------+------+-----+
+|DSP              |        -|    -|      -|     -|    -|
+|Expression       |        -|    -|      0|     2|    -|
+|FIFO             |        -|    -|      -|     -|    -|
+|Instance         |       64|   64|  10626|  5216|    -|
+|Memory           |        -|    -|      -|     -|    -|
+|Multiplexer      |        -|    -|      0|    47|    -|
+|Register         |        -|    -|     72|     -|    -|
++-----------------+---------+-----+-------+------+-----+
+|Total            |       64|   64|  10698|  5265|    0|
++-----------------+---------+-----+-------+------+-----+
+|Available        |       40|   40|  16000|  8000|    0|
++-----------------+---------+-----+-------+------+-----+
+|Utilization (%)  |      160|  160|     66|    65|    0|
++-----------------+---------+-----+-------+------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------+-------------------------------------+---------+----+------+------+-----+
+    |                    Instance                    |                Module               | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +------------------------------------------------+-------------------------------------+---------+----+------+------+-----+
+    |control_s_axi_U                                 |control_s_axi                        |       64|   0|  2634|  2344|    0|
+    |grp_dense_gemv_Pipeline_VITIS_LOOP_25_1_fu_314  |dense_gemv_Pipeline_VITIS_LOOP_25_1  |        0|   0|   270|    77|    0|
+    |grp_dense_gemv_Pipeline_VITIS_LOOP_30_2_fu_352  |dense_gemv_Pipeline_VITIS_LOOP_30_2  |        0|  64|  7722|  2795|    0|
+    +------------------------------------------------+-------------------------------------+---------+----+------+------+-----+
+    |Total                                           |                                     |       64|  64| 10626|  5216|    0|
+    +------------------------------------------------+-------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                           Variable Name                          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |grp_dense_gemv_Pipeline_VITIS_LOOP_30_2_fu_352_out_stream_TREADY  |       and|   0|  0|   2|           1|           1|
+    +------------------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                             |          |   0|  0|   2|           1|           1|
+    +------------------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------+----+-----------+-----+-----------+
+    |              Name             | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                      |  29|          7|    1|          7|
+    |in_stream_TREADY_int_regslice  |   9|          2|    1|          2|
+    |out_stream_TDATA_int_regslice  |   9|          2|   32|         64|
+    +-------------------------------+----+-----------+-----+-----------+
+    |Total                          |  47|         11|   34|         73|
+    +-------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |                             Name                            | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                    |   6|   0|    6|          0|
+    |grp_dense_gemv_Pipeline_VITIS_LOOP_25_1_fu_314_ap_start_reg  |   1|   0|    1|          0|
+    |grp_dense_gemv_Pipeline_VITIS_LOOP_30_2_fu_352_ap_start_reg  |   1|   0|    1|          0|
+    |num_rows_read_reg_776                                        |  32|   0|   32|          0|
+    |out_stream_TDATA_reg                                         |  32|   0|   32|          0|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                        |  72|   0|   72|          0|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|       control|         array|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|       control|         array|
+|s_axi_control_AWADDR   |   in|   13|       s_axi|       control|         array|
+|s_axi_control_WVALID   |   in|    1|       s_axi|       control|         array|
+|s_axi_control_WREADY   |  out|    1|       s_axi|       control|         array|
+|s_axi_control_WDATA    |   in|   32|       s_axi|       control|         array|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|       control|         array|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|       control|         array|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|       control|         array|
+|s_axi_control_ARADDR   |   in|   13|       s_axi|       control|         array|
+|s_axi_control_RVALID   |  out|    1|       s_axi|       control|         array|
+|s_axi_control_RREADY   |   in|    1|       s_axi|       control|         array|
+|s_axi_control_RDATA    |  out|   32|       s_axi|       control|         array|
+|s_axi_control_RRESP    |  out|    2|       s_axi|       control|         array|
+|s_axi_control_BVALID   |  out|    1|       s_axi|       control|         array|
+|s_axi_control_BREADY   |   in|    1|       s_axi|       control|         array|
+|s_axi_control_BRESP    |  out|    2|       s_axi|       control|         array|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|    dense_gemv|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|    dense_gemv|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|    dense_gemv|  return value|
+|in_stream_TDATA        |   in|    8|        axis|     in_stream|       pointer|
+|in_stream_TVALID       |   in|    1|        axis|     in_stream|       pointer|
+|in_stream_TREADY       |  out|    1|        axis|     in_stream|       pointer|
+|out_stream_TDATA       |  out|   32|        axis|    out_stream|       pointer|
+|out_stream_TVALID      |  out|    1|        axis|    out_stream|       pointer|
+|out_stream_TREADY      |   in|    1|        axis|    out_stream|       pointer|
++-----------------------+-----+-----+------------+--------------+--------------+
+

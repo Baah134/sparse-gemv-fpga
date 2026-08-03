@@ -1,0 +1,21 @@
+{
+  "0": {
+    "basicblocks": 39,
+    "calls": "",
+    "control_depth": 2,
+    "def_use_depth": 8,
+    "file": "dense_gemv.cpp",
+    "fileloc": 6,
+    "instructions": 419,
+    "loads": {
+      "L": 1,
+      "T": 32
+    },
+    "memory_accesses": 37,
+    "name": "dense_gemv",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 419
+  }
+}

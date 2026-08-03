@@ -1,0 +1,157 @@
+<ENTRY>
+{
+ "thisFile": "C:/fpga_project\\gemv\\dense_gemv\\dense_gemv.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "08/03/26 20:34:13",
+ "timestampMillis": "1785789253756",
+ "buildStep": {
+  "cmdId": "6934c9bb-6ef1-43a7-8e10-29a8577aad01",
+  "name": "vitis-run",
+  "logFile": "C:/fpga_project\\gemv\\dense_gemv\\logs\\dense_gemv.steps.log",
+  "commandLine": "C:/AMDDesignTools/2025.2/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\fpga_project\\gemv\\hls_config.cfg --work_dir dense_gemv ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\fpga_project\\gemv\\hls_config.cfg",
+   "--work_dir",
+   "dense_gemv"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\fpga_project\\gemv"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/03/26 20:34:13",
+ "timestampMillis": "1785789253759",
+ "status": {
+  "cmdId": "6934c9bb-6ef1-43a7-8e10-29a8577aad01",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "08/03/26 20:34:25",
+ "timestampMillis": "1785789265935",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "dense_gemv",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/fpga_project\\hls\\dense_gemv.cpp",
+     "C:/fpga_project\\hls\\dense_gemv.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "08/03/26 20:34:25",
+ "timestampMillis": "1785789265937",
+ "buildStep": {
+  "cmdId": "d97eac5f-1781-42ef-97cc-acb84296463e",
+  "name": "",
+  "logFile": "C:/fpga_project\\gemv\\dense_gemv\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\fpga_project\\gemv"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/03/26 20:34:25",
+ "timestampMillis": "1785789265938",
+ "status": {
+  "cmdId": "d97eac5f-1781-42ef-97cc-acb84296463e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/03/26 20:34:33",
+ "timestampMillis": "1785789273899",
+ "status": {
+  "cmdId": "d97eac5f-1781-42ef-97cc-acb84296463e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "08/03/26 20:34:34",
+ "timestampMillis": "1785789274224",
+ "status": {
+  "cmdId": "6934c9bb-6ef1-43a7-8e10-29a8577aad01",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/03/26 20:34:34",
+ "timestampMillis": "1785789274227",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "08/03/26 20:34:34",
+ "timestampMillis": "1785789274228",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

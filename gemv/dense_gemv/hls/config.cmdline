@@ -1,0 +1,3 @@
+relativeroot=C:/fpga_project/gemv
+original_argv=-c --mode hls --config C:\fpga_project\gemv\hls_config.cfg --work_dir dense_gemv 
+

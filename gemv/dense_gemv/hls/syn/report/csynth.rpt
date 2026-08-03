@@ -1,0 +1,219 @@
+
+
+================================================================
+== Synthesis Summary Report of 'dense_gemv'
+================================================================
++ General Information: 
+    * Date:           Mon Aug  3 20:40:58 2026
+    * Version:        2025.2 (Build 6295257 on Nov 12 2025)
+    * Project:        dense_gemv
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a12t-cpg238-1
+    
+
+* Performance & Resource Estimates: 
++----------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+-----------+-----------+-------------+------------+-----+
+|                 Modules                | Issue|               | Iteration|         | Trip |          |      Latency      |      |           |           |             |            |     |
+|                 & Loops                | Type | Violation Type|  Latency | Interval| Count| Pipelined| (cycles)|   (ns)  | Slack|   BRAM    |    DSP    |      FF     |     LUT    | URAM|
++----------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+-----------+-----------+-------------+------------+-----+
+|+ dense_gemv                            |     -|              -|         -|        -|     -|        no|        -|        -|  0.09|  64 (160%)|  64 (160%)|  10698 (66%)|  5265 (65%)|    -|
+| + dense_gemv_Pipeline_VITIS_LOOP_25_1  |     -|              -|         -|        -|     -|       yes|       34|  340.000|  2.13|          -|          -|     270 (1%)|    77 (~0%)|    -|
+|  o VITIS_LOOP_25_1                     |     -|              -|         2|        1|    32|       yes|       32|  320.000|  7.30|          -|          -|            -|           -|    -|
+| + dense_gemv_Pipeline_VITIS_LOOP_30_2  |     -|              -|         -|        -|     -|       yes|        -|        -|  0.09|          -|  64 (160%)|   7722 (48%)|  2795 (34%)|    -|
+|  o VITIS_LOOP_30_2                     |     -|              -|         7|        1|     -|       yes|        -|        -|  7.30|          -|          -|            -|           -|    -|
++----------------------------------------+------+---------------+----------+---------+------+----------+---------+---------+------+-----------+-----------+-------------+------------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+-------------------+
+| Interface     | Data Width | Address Width | Offset | Register | Resource Estimate |
++---------------+------------+---------------+--------+----------+-------------------+
+| s_axi_control | 32         | 13            | 128    | 0        | BRAM=64           |
++---------------+------------+---------------+--------+----------+-------------------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | num_rows | 0x10   | 32    | W      | Data signal of num_rows          |                                                                      |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++------------+-----------+---------------+-------+--------+--------+
+| Interface  | Direction | Register Mode | TDATA | TREADY | TVALID |
++------------+-----------+---------------+-------+--------+--------+
+| in_stream  | in        | both          | 8     | 1      | 1      |
+| out_stream | out       | both          | 32    | 1      | 1      |
++------------+-----------+---------------+-------+--------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------+-----------+------------------------+
+| Argument   | Direction | Datatype               |
++------------+-----------+------------------------+
+| in_stream  | in        | stream<ap_int<8>, 0>&  |
+| weights    | in        | int*                   |
+| out_stream | out       | stream<ap_int<32>, 0>& |
+| num_rows   | in        | int                    |
++------------+-----------+------------------------+
+
+* SW-to-HW Mapping
++------------+---------------+-----------+------------------------------------+
+| Argument   | HW Interface  | HW Type   | HW Info                            |
++------------+---------------+-----------+------------------------------------+
+| in_stream  | in_stream     | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| weights    | s_axi_control | interface |                                    |
+| out_stream | out_stream    | interface |                                    |
+| num_rows   | s_axi_control | register  | name=num_rows offset=0x10 range=32 |
++------------+---------------+-----------+------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------+-----+--------+-------------+-------+--------+---------+
+| Name                                   | DSP | Pragma | Variable    | Op    | Impl   | Latency |
++----------------------------------------+-----+--------+-------------+-------+--------+---------+
+| + dense_gemv                           | 64  |        |             |       |        |         |
+|  + dense_gemv_Pipeline_VITIS_LOOP_25_1 | 0   |        |             |       |        |         |
+|    icmp_ln25_fu_532_p2                 |     |        | icmp_ln25   | seteq | auto   | 0       |
+|    add_ln25_fu_538_p2                  |     |        | add_ln25    | add   | fabric | 0       |
+|  + dense_gemv_Pipeline_VITIS_LOOP_30_2 | 64  |        |             |       |        |         |
+|    icmp_ln30_fu_1101_p2                |     |        | icmp_ln30   | setlt | auto   | 0       |
+|    add_ln30_fu_1107_p2                 |     |        | add_ln30    | add   | fabric | 0       |
+|    mul_32s_8s_32_2_1_U34               | 2   |        | mul_ln36    | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U35               | 2   |        | mul_ln36_1  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U36               | 2   |        | mul_ln36_2  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U37               | 2   |        | mul_ln36_3  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U38               | 2   |        | mul_ln36_4  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U39               | 2   |        | mul_ln36_5  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U40               | 2   |        | mul_ln36_6  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U41               | 2   |        | mul_ln36_7  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U42               | 2   |        | mul_ln36_8  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U43               | 2   |        | mul_ln36_9  | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U44               | 2   |        | mul_ln36_10 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U45               | 2   |        | mul_ln36_11 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U46               | 2   |        | mul_ln36_12 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U47               | 2   |        | mul_ln36_13 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U48               | 2   |        | mul_ln36_14 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U49               | 2   |        | mul_ln36_15 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U50               | 2   |        | mul_ln36_16 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U51               | 2   |        | mul_ln36_17 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U52               | 2   |        | mul_ln36_18 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U53               | 2   |        | mul_ln36_19 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U58               | 2   |        | mul_ln36_20 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U59               | 2   |        | mul_ln36_21 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U60               | 2   |        | mul_ln36_22 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U61               | 2   |        | mul_ln36_23 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U54               | 2   |        | mul_ln36_24 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U55               | 2   |        | mul_ln36_25 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U56               | 2   |        | mul_ln36_26 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U57               | 2   |        | mul_ln36_27 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U62               | 2   |        | mul_ln36_28 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U63               | 2   |        | mul_ln36_29 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U64               | 2   |        | mul_ln36_30 | mul   | auto   | 1       |
+|    mul_32s_8s_32_2_1_U65               | 2   |        | mul_ln36_31 | mul   | auto   | 1       |
+|    add_ln36_fu_1215_p2                 |     |        | add_ln36    | add   | fabric | 0       |
+|    add_ln36_1_fu_1219_p2               |     |        | add_ln36_1  | add   | fabric | 0       |
+|    add_ln36_4_fu_1144_p2               |     |        | add_ln36_4  | add   | fabric | 0       |
+|    add_ln36_7_fu_1234_p2               |     |        | add_ln36_7  | add   | fabric | 0       |
+|    add_ln36_8_fu_1238_p2               |     |        | add_ln36_8  | add   | fabric | 0       |
+|    add_ln36_11_fu_1158_p2              |     |        | add_ln36_11 | add   | fabric | 0       |
+|    add_ln36_16_fu_1172_p2              |     |        | add_ln36_16 | add   | fabric | 0       |
+|    add_ln36_19_fu_1186_p2              |     |        | add_ln36_19 | add   | fabric | 0       |
+|    add_ln36_22_fu_1196_p2              |     |        | add_ln36_22 | add   | fabric | 0       |
+|    add_ln36_23_fu_1200_p2              |     |        | add_ln36_23 | add   | fabric | 0       |
+|    add_ln36_26_fu_1130_p2              |     |        | add_ln36_26 | add   | fabric | 0       |
++----------------------------------------+-----+--------+-------------+-------+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |           |           |      |      |        |          |      |         | Banks            |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + dense_gemv      |           |           | 64   | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface | s_axilite | 64   |      |        |          |      |         |                  |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Inferred Pragmas
++----------+---------+---------------------------------------------------------------------------------------------+-------------------------------+
+| Type     | Options | Location                                                                                    | Inferred From                 |
++----------+---------+---------------------------------------------------------------------------------------------+-------------------------------+
+| PIPELINE |         | loop VITIS_LOOP_25_1 (../hls/dense_gemv.cpp:25:21) in dense_gemv (../hls/dense_gemv.cpp:25) | syn.compile.pipeline_loops=64 |
++----------+---------+---------------------------------------------------------------------------------------------+-------------------------------+
+
+* Valid Pragma Syntax
++-----------------+--------------------------------------+------------------------------------------+
+| Type            | Options                              | Location                                 |
++-----------------+--------------------------------------+------------------------------------------+
+| INTERFACE       | axis port=in_stream                  | in dense_gemv (../hls/dense_gemv.cpp:12) |
+| INTERFACE       | axis port=out_stream                 | in dense_gemv (../hls/dense_gemv.cpp:13) |
+| INTERFACE       | s_axilite port=weights               | in dense_gemv (../hls/dense_gemv.cpp:14) |
+| INTERFACE       | s_axilite port=num_rows              | in dense_gemv (../hls/dense_gemv.cpp:15) |
+| INTERFACE       | s_axilite port=return                | in dense_gemv (../hls/dense_gemv.cpp:16) |
+| ARRAY_PARTITION | variable=weights complete dim=2      | in dense_gemv (../hls/dense_gemv.cpp:18) |
+| ARRAY_PARTITION | variable=input_buffer complete dim=1 | in dense_gemv (../hls/dense_gemv.cpp:22) |
+| PIPELINE        | ii=1                                 | in dense_gemv (../hls/dense_gemv.cpp:32) |
++-----------------+--------------------------------------+------------------------------------------+
+
+

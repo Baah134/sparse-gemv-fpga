@@ -1,7 +1,8 @@
 {
   "workspaceRoot": "C:\\fpga_project",
   "mapping": {
-    "tb\\tb_stream_mover.cpp": "stream_project",
-    "hls\\stream_mover.cpp": "stream_project"
+    "hls\\dense_gemv.h": "gemv",
+    "tb\\tb_dense_gemv.cpp": "gemv",
+    "hls\\dense_gemv.cpp": "gemv"
   }
 }

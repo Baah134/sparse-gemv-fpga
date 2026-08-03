@@ -1,5 +1,0 @@
-stream_mover_control_s_axi
-stream_mover_regslice_both
-stream_mover_regslice_both
-stream_mover_flow_control_loop_pipe
-stream_mover
