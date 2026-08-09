@@ -1,8 +1,0 @@
-{
-  "workspaceRoot": "C:\\fpga_project",
-  "mapping": {
-    "tb\\tb_sparse_gemv.cpp": "sparse_project",
-    "hls\\sparse_gemv.cpp": "sparse_project",
-    "hls\\sparse_gemv.h": "sparse_project"
-  }
-}
