@@ -1,8 +1,8 @@
 {
   "workspaceRoot": "C:\\fpga_project",
   "mapping": {
-    "hls\\dense_gemv.h": "gemv",
-    "tb\\tb_dense_gemv.cpp": "gemv",
-    "hls\\dense_gemv.cpp": "gemv"
+    "tb\\tb_sparse_gemv.cpp": "sparse_project",
+    "hls\\sparse_gemv.cpp": "sparse_project",
+    "hls\\sparse_gemv.h": "sparse_project"
   }
 }

@@ -9,3 +9,5 @@
 *.gen/
 .Xil/
 mac_project/
+_ide/
+sparse_project/
