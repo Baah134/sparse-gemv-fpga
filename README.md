@@ -59,9 +59,7 @@ While a fixed-loop sparse GEMV does not reduce clock cycle latency (because the 
 
 ```text
 .
-├── hls/                # Vitis HLS source code and directives
-│   ├── src/            # Accelerator kernels (MAC, GEMV, Sparse Logic)
-│   └── tb/             # C/C++ testbenches and verification vectors
-├── docs/               # Architecture diagrams and synthesis reports
-├── scripts/            # Tcl synthesis and automation scripts
-└── README.md           # Project documentation
+├── hls/                # Vitis HLS C++ kernels (MAC, GEMV, Sparse GEMV)   
+├── tb/                 # C++ testbenches for co-simulation
+├── ref/                # Python scripts and benchmark graphs
+└── README.md           # Project documentation and results
